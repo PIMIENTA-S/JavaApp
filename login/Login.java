@@ -10,9 +10,8 @@ package com.login;
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+
+    
     public Login() {
         initComponents();
     }
@@ -36,9 +35,9 @@ public class Login extends javax.swing.JFrame {
         passUsuario = new javax.swing.JPasswordField();
         entrarPanel = new javax.swing.JPanel();
         entrar = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        cabeza = new javax.swing.JPanel();
+        cerrar = new javax.swing.JPanel();
+        x = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,7 +107,7 @@ public class Login extends javax.swing.JFrame {
         diseñoLLayout.setHorizontalGroup(
             diseñoLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diseñoLLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(65, 65, 65)
                 .addGroup(diseñoLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(usuario)
                     .addComponent(inicio)
@@ -117,12 +116,12 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(contraseña)
                     .addComponent(entrarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         diseñoLLayout.setVerticalGroup(
             diseñoLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diseñoLLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diseñoLLayout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(logoMini)
                 .addGap(36, 36, 36)
                 .addComponent(inicio)
@@ -136,53 +135,67 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(passUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(entrarPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(61, 61, 61))
         );
 
         back.add(diseñoL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 510));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel1.setText("X");
-        jLabel1.setAlignmentX(0.5F);
-        jLabel1.setAlignmentY(0.0F);
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel1.setPreferredSize(new java.awt.Dimension(44, 44));
+        cabeza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cabezaMousePressed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        x.setBackground(new java.awt.Color(51, 51, 51));
+        x.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        x.setForeground(new java.awt.Color(51, 51, 51));
+        x.setText("X");
+
+        javax.swing.GroupLayout cerrarLayout = new javax.swing.GroupLayout(cerrar);
+        cerrar.setLayout(cerrarLayout);
+        cerrarLayout.setHorizontalGroup(
+            cerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 47, Short.MAX_VALUE)
+            .addGroup(cerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cerrarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(x)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        cerrarLayout.setVerticalGroup(
+            cerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 46, Short.MAX_VALUE)
+            .addGroup(cerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cerrarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(x)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout cabezaLayout = new javax.swing.GroupLayout(cabeza);
+        cabeza.setLayout(cabezaLayout);
+        cabezaLayout.setHorizontalGroup(
+            cabezaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 900, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 844, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(cabezaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cabezaLayout.createSequentialGroup()
+                    .addContainerGap(847, Short.MAX_VALUE)
+                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 56, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        cabezaLayout.setVerticalGroup(
+            cabezaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 58, Short.MAX_VALUE)
+            .addGroup(cabezaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cabezaLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        back.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+        back.add(cabeza, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 50));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/image.png"))); // NOI18N
         back.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 280, 510));
@@ -200,6 +213,10 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cabezaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cabezaMousePressed
+
+    }//GEN-LAST:event_cabezaMousePressed
 
     /**
      * @param args the command line arguments
@@ -238,18 +255,18 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel back;
+    private javax.swing.JPanel cabeza;
+    private javax.swing.JPanel cerrar;
     private javax.swing.JLabel contraseña;
     private javax.swing.JPanel diseñoL;
     private javax.swing.JLabel entrar;
     private javax.swing.JPanel entrarPanel;
     private javax.swing.JLabel inicio;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel logoMini;
     private javax.swing.JPasswordField passUsuario;
     private javax.swing.JTextField textoUsuario;
     private javax.swing.JLabel usuario;
+    private javax.swing.JLabel x;
     // End of variables declaration//GEN-END:variables
 }
